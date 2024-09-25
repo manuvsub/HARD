@@ -1,10 +1,10 @@
 # HARD NMR Pulse Sequence
 
 ## Overview
-This repository contains the NMR pulse sequence file `hard3d.x` for measuring the rotating frame relaxation rates \(R1_{\rho}\) and \(R2_{\rho}\) using adiabatic 180-degree pulses. This sequence is designed for both 13C and 15N labeled samples, and can be used in different configurations to probe slow microsecond-to-millisecond protein dynamics. The sequence was originally coded by Youlin Xia, with a focus on acquiring six 2D planes using hyperbolic secant (HS) pulses with varying "stretching" factors.
+This repository contains the NMR pulse sequence file `hard3d.x` for measuring the rotating frame relaxation rates R1ₚ and R2ₚ using adiabatic 180-degree pulses. This sequence is designed for both 13C and 15N labeled samples, and can be used in different configurations to probe slow microsecond-to-millisecond protein dynamics. The sequence was originally coded by Youlin Xia, with a focus on acquiring six 2D planes using hyperbolic secant (HS) pulses with varying "stretching" factors.
 
 ## Pulse Sequence Summary
-The HARD pulse sequence implements adiabatic full passage (AFP) pulses to induce relaxation dispersions that are sensitive to slow dynamic processes such as protein folding, binding, allostery, and molecular recognition. The sequence employs hyperbolic secant pulses (HS1, HS2, HS4, HS6, HS8) in various combinations to explore the relaxation rates \(R1_{\rho}\) and \(R2_{\rho}\), as described in the following publication:
+The HARD pulse sequence implements adiabatic full passage (AFP) pulses to induce relaxation dispersions that are sensitive to slow dynamic processes such as protein folding, binding, allostery, and molecular recognition. The sequence employs hyperbolic secant pulses (HS1, HS2, HS4, HS6, HS8) in various combinations to explore the relaxation rates R1ₚ and R2ₚ, as described in the following publication:
 
 **Reference:** S. Mangia et al., _JACS_ 132, 9979-9981 (2010) [doi:10.1021/ja1038787](https://doi.org/10.1021/ja1038787).
 
@@ -21,12 +21,12 @@ Each plane corresponds to a different hyperbolic secant stretching factor, allow
 
 ## Experimental Setup
 - The sequence can be run in two main modes depending on the type of relaxation being measured:
-  - `zgoptns -DR1` for \(R1_{\rho}\)
-  - `zgoptns -DR2` for \(R2_{\rho}\)
+  - `zgoptns -DR1` for R1ₚ
+  - `zgoptns -DR2` for R2ₚ
 
 - If the sample is labeled with 13C or 15N, use:
-  - `zgoptns -DR1 -DLABEL_CN` for \(R1_{\rho}\)
-  - `zgoptns -DR2 -DLABEL_CN` for \(R2_{\rho}\)
+  - `zgoptns -DR1 -DLABEL_CN` for R1ₚ
+  - `zgoptns -DR2 -DLABEL_CN` for R2ₚ
 
 ### Gradient Specifications
 - For z-only gradients, use the following ratios:
@@ -45,13 +45,4 @@ Each plane corresponds to a different hyperbolic secant stretching factor, allow
 - `d24`, `d25`, `d26`: Delays for 1/(4J) or 1/(8J) for YH multiplicities
 
 ## Applications
-This pulse sequence is ideal for probing slow protein dynamics in both small and large soluble proteins, as well as membrane proteins reconstituted in micelles. The adiabatic pulses allow for a large dynamic range, reduced hardware stress, and minimized sample heating.
-
-## Citation
-For any work using this pulse sequence, please cite the following article:
-S. Mangia et al., _Probing Slow Protein Dynamics by Adiabatic R1ρ and R2ρ NMR Experiments_, _JACS_, 2010 [doi:10.1021/ja1038787](https://doi.org/10.1021/ja1038787).
-
-## Contact
-For additional questions or troubleshooting, please contact:
-- **Gianluigi Veglia** (veglia001@umn.edu)
-- **Silvia Mangia** (mangia@cmrr.umn.edu)
+This pulse sequence is ideal for probing slow protein dynamics in both small
